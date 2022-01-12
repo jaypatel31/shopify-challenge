@@ -1,0 +1,38 @@
+.card-container{
+    width:80%;
+    margin:auto;
+}
+
+.card-content{
+    display: flex;
+}
+
+.explaination{
+    padding:0 20px;
+}
+
+.card-content img{
+    height:400px;
+}
+
+.card-content i {
+    transition: 0.5s ease;
+}
+
+.red-color{
+    color:red;
+}
+
+@media screen and (max-width: 600px) {
+    .card-content{
+        display: flex;
+        flex-direction: column;
+    }
+    .explaination{
+        padding:20px 0px;
+    }
+    .card-content img{
+        height:auto;
+    }
+  }
+

@@ -1,23 +1,19 @@
-import logo from './logo.svg';
 import './App.css';
+import {useState} from "react"
+import AllCards from './components/AllCards/AllCards';
+import Navbar from './components/Navbar/Navbar';
 
 function App() {
+
+  let x = new Date();
+  let y = new Date(new Date().getTime()-604800000);
+  const [endDate, setEndDate] = useState(x.getFullYear()+"-"+x.getMonth()+1+"-"+x.getDate())
+  const [startDate, setStartDate] = useState(y.getFullYear()+"-"+y.getMonth()+1+"-"+y.getDate())
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar endDate={endDate} setEndDate={setEndDate} startDate={startDate} setStartDate={setStartDate}/>
+      <AllCards endDate={endDate} setEndDate={setEndDate} startDate={startDate} setStartDate={setStartDate}/>
     </div>
   );
 }
